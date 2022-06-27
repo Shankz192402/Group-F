@@ -4,8 +4,8 @@ task main()
 
 {
 
- SetSensorLight(IN_3);
- SetSensorLowspeed(IN_1);
+ SetSensorLight(IN_3);// Light sensor input
+ SetSensorLowspeed(IN_1); // Low speed input
  //RotateMotor(OUT_BC, 70,250);
 
  while (true)
@@ -16,12 +16,12 @@ task main()
 
  {
 
- //Off(OUT_BC);
+ //Off(OUT_BC);  
  Wait(1000);
- RotateMotor(OUT_BC, 70,-111.52);
+ RotateMotor(OUT_BC, 70,-111.52); /// Rotate and reverse to change the direction
  }
 
- if (Sensor(IN_3) > THRESHOLD && SensorUS(IN_1) > NEAR )
+ if (Sensor(IN_3) > THRESHOLD && SensorUS(IN_1) > NEAR )  // Rotate and move forward to intercept
 
  {
  Off(OUT_BC);
